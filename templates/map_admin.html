@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <style>
+
+  </style>
+  <head>
+    <title>WiFi Admin Issue Map</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>WiFi Issue Admin Map</h1>
+      <svg id="drawing" width="800" height="600"> 
+        <rect x="0" y="0" width="800" height="600" fill="#eee" />
+        <rect x="0" y="0" width="600" height="120"/>
+        <rect x="600" y="0" width="200" height="120" fill="#dda" />
+        <rect x="0" y="120" width="400" height="120"/>
+        <rect x="400" y="120" width="120" height="120" fill="#aaf"/>
+        <text x="650" y="50" font-family="Sans-Serif" font-size="12">Check-In Area</text>
+
+        <!-- ms -->
+        <rect x="410" y="130" width="40" height="40" fill="#f44"/>
+        <rect x="410" y="180" width="40" height="40" fill="#44f"/>
+        <rect x="460" y="180" width="40" height="40" fill="#ff4"/>
+        <rect x="460" y="130" width="40" height="40" fill="#4f4"/>
+
+        <circle cx="200" cy="280" r="30" stroke="black" stroke-width="3" fill="#3f3" />
+        <text x="175" y="280" font-family="Sans-Serif" font-size="12">Still Only</text>
+        <text x="180" y="295" font-family="Sans-Serif" font-size="12">$5/mo</text>
+        
+        <text x="30" y="450" font-family="Sans-Serif" font-size="20" transform="rotate(270, 30, 450)">PIZZA</text>
+
+        <circle cx="200" cy="280" r="30" stroke="black" stroke-width="3" fill="#3f3" />
+        
+        {% for p in problems %}
+
+        <!--
+        {{'%s\n%s\n%s\n%s' % (p[3], p[4], p[5], p[0])}}
+        -->
+          <circle title="{{p[3]}}" cx="{{p[1]}}" cy="{{p[2]}}" r="10" fill="red" />
+
+        {% endfor %}
+      </svg>
+    </div>
+
+  </body>
+</html>
+
